@@ -34,7 +34,12 @@ public class MedidaView extends javax.swing.JFrame {
     
    MedidaController Controller;
     public MedidaView() {
+    
         initComponents();
+        MedidaDomain domain=new MedidaDomain();
+        MedidaController controller=new MedidaController(domain,this);
+        Controller=controller;
+       
        
     }
     public void setController(MedidaController Controlador)
@@ -155,7 +160,7 @@ public class MedidaView extends javax.swing.JFrame {
 
         jLabel3.setText("Resultado :");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " km", "mt", "dc", "cm", "mm" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "km", "mt", "dc", "cm", "mm" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -245,7 +250,9 @@ public class MedidaView extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-      jLabel5.setText("hola");
+  
+        
+        Controller.vistaction(jTextField1.getText(), jComboBox3.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString());
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked

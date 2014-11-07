@@ -35,6 +35,7 @@ public class MedidaController {
      //TODO AGREGAR TODAS LAS MEDIDAS FALTANTES
      String key = tipoinicial+"-"+tipofinal;
      Integer aux = map.get(key);
+     System.out.print(tipoinicial+"-"+tipofinal);
      Integer result= valorinicial*aux;
      return result.toString();
 
