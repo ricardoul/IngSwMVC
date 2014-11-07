@@ -11,19 +11,6 @@ package examples;
  */
 public class MedidaDomain {
     
-   private int cantidad;
-   private String tipo;
-   public int getCantidad() {
-      return cantidad;
-   }
-   public void setCantidad(int cant) {
-      this.cantidad = cant;
-   }
-   public String getTipoMedida() {
-      return this.tipo;
-   }
-   public void setTipoMedida(String tipoMedida) {
-      this.tipo = tipoMedida;
-   }
+ //NO ES NECESARIO
 }
 

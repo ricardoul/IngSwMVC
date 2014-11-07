@@ -41,10 +41,10 @@ public class MedidaView extends javax.swing.JFrame {
     {
          this.Controller=Controlador;
     }
-     public void updateStatus(Integer resultado)
+     public void updateStatus(String resultado)
     {
        
-         jLabel5.setText(resultado.toString());
+         jLabel5.setText(resultado);
     }
     
     /** This method is called from within the constructor to
@@ -63,7 +63,6 @@ public class MedidaView extends javax.swing.JFrame {
         jDialog5 = new javax.swing.JDialog();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -140,18 +139,6 @@ public class MedidaView extends javax.swing.JFrame {
 
         jLabel1.setText("Cantidad Inicial");
 
-        jButton1.setText("Guardar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Convertir");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -212,13 +199,9 @@ public class MedidaView extends javax.swing.JFrame {
                                 .add(14, 14, 14)
                                 .add(jComboBox3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(jButton1)
-                        .add(22, 22, 22))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton5)
-                        .addContainerGap())))
+                .add(27, 27, 27)
+                .add(jButton5)
+                .addContainerGap())
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .add(30, 30, 30)
                 .add(jLabel2)
@@ -229,7 +212,6 @@ public class MedidaView extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(11, 11, 11)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton1)
                     .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel1)
                     .add(jComboBox3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -249,10 +231,6 @@ public class MedidaView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -274,12 +252,6 @@ public class MedidaView extends javax.swing.JFrame {
         // TODO add your handling code here:
          System.exit(5);
     }//GEN-LAST:event_jButton5MouseClicked
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-    
-        
-        Controller.updateDomain(Integer.parseInt(jLabel1.getText()),jComboBox3.getSelectedItem().toString());
-    }//GEN-LAST:event_jButton1MouseClicked
     
     /**
      * @param args the command line arguments
@@ -319,7 +291,6 @@ public class MedidaView extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jComboBox2;

@@ -5,6 +5,9 @@
  */
 package examples;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author rumpierrez
@@ -18,31 +21,27 @@ public class MedidaController {
       this.model = model;
       this.view = view;
    }
-
-   public void setTipo(String tipo){
-      model.setTipoMedida(tipo);		
-   }
-
-   public String getTipo(){
-      return model.getTipoMedida();		
-   }
-
-   public void setCantidad(int cant){
-      model.setCantidad(cant);		
-   }
-
-   public int getCantidad(){
-      return model.getCantidad();		
-   }
- public void updateDomain(int cantidad,String tipo){
-      model.setCantidad(cantidad);
-      model.setTipoMedida(tipo);
-      updateView();
+  public void vistaction(String valorinicial,String tipoinicial,String tipofinal)
+          
+  {
+     String resultado= resultado(Integer.parseInt(valorinicial),tipoinicial, tipofinal);
+     updateView(resultado);
+  }
+  public String resultado(Integer valorinicial,String tipoinicial,String tipofinal)
+  {
       
-   }
-   public void updateView(){	
+     Map<String, Integer> map = new HashMap<String, Integer>();
+     map.put("km-km", 1);
+     //TODO AGREGAR TODAS LAS MEDIDAS FALTANTES
+     String key = tipoinicial+"-"+tipofinal;
+     Integer aux = map.get(key);
+     Integer result= valorinicial*aux;
+     return result.toString();
+
+  }
+   public void updateView(String resultado){	
        
-     view.updateStatus(model.getCantidad(), model.getTipoMedida());
+     view.updateStatus(resultado);
    }	
 }
 
